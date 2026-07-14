@@ -1,0 +1,6 @@
+locale: 'en-us'
+title: 'Seattle Photo Club'
+deployment:
+  targets:
+  - name: default
+    url: s3://www.seattlephoto.club?region=us-west-2

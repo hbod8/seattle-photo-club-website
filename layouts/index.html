@@ -1,6 +1,10 @@
 {{ define "main" }}
 <section class="homepage">
   <img src="logo.jpg" alt="logo">
-  <h1>Coming soon...</h1>
+  <h1>Website coming soon...</h1>
+  {{ $icon := resources.Get "logo.jpg" }}
+  {{ with $icon }}
+    <img src="{{ .RelPermalink }}" alt="">
+  {{ end }}
 </section>
 {{ end }}
