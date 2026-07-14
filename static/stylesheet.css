@@ -1,0 +1,25 @@
+body {
+  /* background-image: url('paper-texture.svg');
+  background-repeat: repeat;
+  background-size: 500px 500px; */
+
+  font-family: "berthold-block-w1g", sans-serif;
+  font-style: normal;
+}
+
+p {
+  font-weight: 100;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 800;
+}
+
+section.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.homepage img {
+  max-width: 25vw;
+}

@@ -1,0 +1,28 @@
+<!--
+  Seattle Photo Club
+  Harry Saliba 2026
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {{ block "title" . }}
+        {{ .Site.Title }}
+      {{ end }}
+    </title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{{ "stylesheet.css" | relURL }}">
+    <!-- <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/png"> -->
+    <!-- Adobe font used in logo -->
+    <link rel="stylesheet" href="https://use.typekit.net/ena7orz.css">
+    <script src="{{ "script.js" | relURL }}" defer></script>
+  </head>
+  <body>
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+    </main>
+  </body>
+</html>
