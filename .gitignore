@@ -11,3 +11,15 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+tfplan*
+# .terraform.lock.hcl is intentionally NOT ignored - commit it to pin
+# provider versions.
+
+# Claude files
+.claude/
