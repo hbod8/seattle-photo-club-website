@@ -39,6 +39,12 @@
     {{ end }}
     <!-- Adobe font used in logo -->
     <link rel="stylesheet" href="https://use.typekit.net/ena7orz.css">
+    <!-- opengraph metadata -->
+    {{ partial "opengraph.html" . }}
+    <!-- schema metadata -->
+    {{ partial "schema.html" . }}
+    <!-- twitter card metadata -->
+    {{ partial "twitter_cards.html" . }}
   </head>
   <body>
     <main>
