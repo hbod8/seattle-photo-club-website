@@ -23,3 +23,5 @@ tfplan*
 
 # Claude files
 .claude/
+
+.DS_Store
