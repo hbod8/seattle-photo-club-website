@@ -14,7 +14,7 @@
     </title>
     <!-- CSS only -->
     <link rel="stylesheet" href="{{ "stylesheet.css" | relURL }}">
-    {{ with resources.Get "logo.jpg" }}
+    {{ with resources.Get "logo.png" }}
       {{ with .Process "resize 167x167 png" }}
         <link rel="apple-touch-icon" sizes="167x167"  href="{{ .RelPermalink }}" type="image/png">
       {{ end }}
@@ -47,9 +47,7 @@
     {{ partial "twitter_cards.html" . }}
   </head>
   <body>
-    <main>
-      {{ block "main" . }}
-      {{ end }}
-    </main>
+    {{ block "main" . }}
+    {{ end }}
   </body>
 </html>

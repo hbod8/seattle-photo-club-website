@@ -1,0 +1,10 @@
+feeds:
+  - name: Harry
+    url: https://harrysaliba.com/index.xml
+    type: rss
+  - name: Aimee
+    url: https://aimeeis.cool/feed/
+    type: rss
+  - name: Anders
+    url: https://anders.conbere.org/blog/atom.xml
+    type: atom

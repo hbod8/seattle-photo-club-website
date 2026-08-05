@@ -4,3 +4,8 @@ deployment:
   targets:
   - name: default
     url: s3://www.seattlephoto.club?region=us-west-2
+# the following adds the discord link to the menu
+menu:
+  main:
+    - name: Discord
+      url: https://discord.gg/VDn6eDccS9

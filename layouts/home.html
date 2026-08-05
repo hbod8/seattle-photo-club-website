@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ partial "menu.html" . }}
+<main>
+  {{ with site.GetPage "feed" }}
+  <section class="feed">
+    <h1>Recent Member Posts</h1>
+    <ul>
+      {{ range first 5 (sort .Pages "PublishDate" "desc") }}
+      <li>
+        <h3><a href="{{ .Params.link }}">{{ .Title }}</a> — {{ .Params.author }} — {{ time.Format "January 2, 2006" .PublishDate }}</h3>
+        <p>{{ .Content }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ else }}
+    {{ warnf "Failed to load the feeds on the homepage. omitting the html."}}
+  {{ end }}
+</main>
+{{ end }}

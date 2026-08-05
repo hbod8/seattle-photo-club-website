@@ -1,0 +1,12 @@
+<menu>
+  <a href="{{ .Site.Home.RelPermalink }}">
+    {{ with resources.Get "logo.png" }}
+    <img src="{{ .RelPermalink }}" alt="logo">
+    {{ end }}
+  </a>
+  {{ range site.Menus.main }}
+  <a {{ with .Params.class -}} class="{{ . }}" {{ end -}} href="{{ .URL }}">
+    {{ .Name }}
+  </a>
+  {{ end }}
+</menu>
