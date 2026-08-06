@@ -1,6 +1,9 @@
+{{ define "title" }}
+  {{ .Title }}
+{{ end }}
 {{ define "main" }}
-{{ partial "menu.html" . }}
-<main>
-{{ .Content }}
-</main>
+  <main>
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+  </main>
 {{ end }}

@@ -1,7 +1,6 @@
 {{ define "main" }}
-{{ partial "menu.html" . }}
 <main>
-  <h2>{{ .Title }}</h2>
+  <h1>{{ .Title }}</h1>
   <ul>
     {{ range sort .Pages "PublishDate" "desc" }}
     <li>

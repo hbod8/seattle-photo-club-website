@@ -12,4 +12,18 @@ keywords:
   - film photography
   - local
   - community
+params:
+  featured:
+    - file: flowers.jpg
+      caption: "A bush of vibrant pink flowers."
+      link: "https://www.instagram.com/maxtakes.photos/"
+      subtext: "@maxtakesphotos"
+    - file: deceptionpass.jpg
+      caption: "A moody photo of the shoreline just north of Deception Pass."
+      link: "https://www.instagram.com/elanofosho/"
+      subtext: "@elanofosho"
+    - file: barn.jpg
+      caption: "An old falling apart barn."
+      link: "https://www.instagram.com/silver_grains/"
+      subtext: "@silver_grains"
 ---

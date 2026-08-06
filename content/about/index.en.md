@@ -1,6 +1,5 @@
 ---
-date: '2026-07-13T17:35:31-07:00'
-draft: false
+draft: true
 menus: main
 title: 'About'
 ---

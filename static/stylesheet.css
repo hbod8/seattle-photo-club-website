@@ -30,10 +30,20 @@ h1,h2,h3,h4,h5,h6 {
 body {
   display: grid;
   grid-template-columns: 1fr 5fr;
+  min-height: 100vh;
+  max-width: 400mm;
+  margin: 0 auto;
 }
 
 main {
   margin: 1.2rem;
+}
+
+footer {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 menu {
@@ -61,6 +71,52 @@ menu a {
   font-size: 1.6rem;
 }
 
+section {
+  padding: .3rem .3rem .3rem .3rem;
+}
+
+div.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+section.featured {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: row;
+}
+
+section.featured>div {
+  flex: 0 1 auto;
+  margin-top: .2rem;
+  margin-right: .2rem;
+  margin-bottom: .2rem;
+  margin-left: .2rem;
+}
+
+section.featured>div>a {
+  position: relative;
+  display: inline-block;
+}
+
+section.featured>div>a::after {
+  position: absolute;
+}
+
+section.featured>div>a>small {
+  position: absolute;
+  right: .6rem;
+  bottom: .5rem;
+  color: #fefff7;
+  font-size: .8rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+section.featured>div>a>img {
+  max-height: 30rem;
+  max-width: 100%;
+}
+
 section.feed>ul {
   list-style: none;
   padding-left: .8rem;;
@@ -73,4 +129,45 @@ section.feed>ul>li>h3 {
 section.feed>ul>li>p {
   margin-top: .2rem;
   margin-bottom: .2rem;
+}
+
+@media (width <= 800px) {
+  :root {
+    font-size: 4mm;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    max-width: auto;
+    margin: auto;
+  }
+
+  menu {
+    flex-direction: row;
+    margin-left: 0;
+    padding-left: 0;
+    flex-wrap: wrap;
+  }
+
+  menu :first-child {
+    max-height: 20mm;
+    align-self: center;
+  }
+
+  menu a {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  section.featured {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  section.featured>div>a>img {
+    max-height: 20vh;
+    max-width: none;
+  }
 }
