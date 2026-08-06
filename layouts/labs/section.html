@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main>
+  <h1>{{ .Title }}</h1>
+  <ul>
+    {{ range sort .Pages "PublishDate" "desc" }}
+    <li>
+      <h3><a href="{{ .Params.link }}">{{ .Title }}</a> — {{ .Params.author }} — {{ time.Format "January 2, 2006" .PublishDate }}</h3>
+      <p>{{ .Content }}</p>
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

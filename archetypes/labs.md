@@ -6,6 +6,7 @@ title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 summary: 'A page'
 description: 'A page with information'
 # params:
+  # neighborhood:
   # address:
   # url:
   # testimonials:

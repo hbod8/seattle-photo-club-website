@@ -4,8 +4,9 @@ lastmod: '2026-08-06'
 draft: false
 title: "Moody's Film Lab"
 summary: 'A film lab in Burien.'
-description: 'A film lab in Burien.'
+description: 'We want to make film as accessible as possible to make it enjoyable for everyone. We offer developing of all kinds, scanning, and printing. Check us out on Instagram for the latest and greatest of all things Moody’s.'
 params:
+  neighborhood: "Renton"
   address: "831 SW 149th St, Burien, WA 98166"
   url: "https://www.moodysfilm.com"
   capability:

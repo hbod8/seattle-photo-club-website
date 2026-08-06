@@ -4,8 +4,9 @@ lastmod: '2026-08-06'
 draft: false
 title: 'Kenmore Camera'
 summary: 'A camera shop and photo lab.'
-description: 'A camera shop and photo lab.'
+description: 'Family owned and operated since 1974, Kenmore Camera has grown to become the Northwest leader in photographic equipment and accessories.  With a staff of knowledgeable professionals, we offer friendly customer service to all who enjoy the every-changing field of photography.'
 params:
+  neighborhood: "Eastside"
   address: "6708 NE 181st St., PO Box 82467, Kenmore, WA 98028"
   url: "https://kenmorecamera.com/photo-lab/"
   capability:

@@ -4,8 +4,9 @@ lastmod: '2026-08-06'
 draft: false
 title: "Glazer's Photo Lab"
 summary: 'A photo lab in Seattle Center.'
-description: 'A photo lab in Seattle Center.'
+description: "Glazer's Camera is the Northwest's premier source for photo and video equipment and supplies. We are a third generation, locally owned full-line camera store with a strong commitment to stock everything the working professional and serious hobbyist needs to properly pursue the craft."
 params:
+  neighborhood: "Downtown"
   address: "811 Republican St, Seattle, WA 98109"
   url: "https://www.glazerscameraphotolab.com/film-developing-and-scanning"
   capability:

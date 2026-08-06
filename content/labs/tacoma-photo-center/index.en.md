@@ -4,8 +4,9 @@ lastmod: '2026-08-06'
 draft: false
 title: 'Tacoma Photo Center'
 summary: 'A non-profit community photo lab in Tacoma.'
-description: 'A non-profit community photo lab in Tacoma.'
+description: 'Art is a journey for everyone. Creating art, in any medium, is fundamental to development, stress management, navigating life, and one’s well-being. We strive to provide equitable access to creating art, through education. Our particular medium is photography with an emphasis on analogue methods, but all arts and methods are encouraged in the space. Photographic arts can have a particularly high cost barrier for entry, and we work to break that barrier down. We also serve as a community space.'
 params:
+  neighborhood: "Tacoma"
   address: "1720 S 7th St Suite 103, Tacoma, WA 98405"
   url: "https://www.tacomaphotocenter.org/film-development-shop-hours"
   capability:

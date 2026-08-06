@@ -4,8 +4,9 @@ lastmod: '2026-08-06'
 draft: true
 title: 'Panda Lab'
 summary: 'A small photo lab in Seattle Center.'
-description: 'A small photo lab in Seattle Center.'
+description: 'Panda Lab is dedicated to the proposition that the custom photo lab should not become an endangered species. We founded Panda in 1983 to provide superior traditional black & white processing and printing to the most demanding professional, commercial, and discerning amateur clients. Our work has traveled around the world in countless images viewed in print publications, on museum walls, on the pages of family scrapbooks, and these days, on the latest high-tech monitors.'
 params:
+  neighborhood: "Downtown"
   address: "533 Warren Ave N, Seattle, WA 98109"
   url: "https://pandalab.com"
   capability:

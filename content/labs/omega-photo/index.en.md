@@ -3,9 +3,10 @@ date: '2026-08-06'
 lastmod: '2026-08-06'
 draft: false
 title: 'Omega Photo'
-summary: 'A small photo lab.'
-description: 'A small photo lab.'
+summary: 'A small photo lab on the eastside.'
+description: "Located in Bellevue between the Arco station and Sound Transit's Wilberton station, Omega Photo is the premiere Eastside Photo Specialist. We offer a variety of equipment, developing, and retouching services. Please browse through our products online or give us a call if you are looking for something specific. Let Omega meet all your photography needs!"
 params:
+  neighborhood: "Eastside"
   address: "11643 NE 8th St, Bellevue, WA 98005, USA"
   url: "https://www.omegaphoto.biz/"
   capability:
