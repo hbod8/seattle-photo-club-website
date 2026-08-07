@@ -14,6 +14,10 @@ taxonomies:
   process: processes
   format: formats
   neighborhood: neighborhoods
+# lab taxonomy pages are HTML-only - no RSS feeds for these listing/term pages
+outputs:
+  taxonomy: ["HTML"]
+  term: ["HTML"]
 # custom overrides for lab taxonomies
 permalinks:
   taxonomy:
