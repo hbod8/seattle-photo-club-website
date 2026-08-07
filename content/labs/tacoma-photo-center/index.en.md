@@ -5,8 +5,14 @@ draft: false
 title: 'Tacoma Photo Center'
 summary: 'A non-profit community photo lab in Tacoma.'
 description: 'Art is a journey for everyone. Creating art, in any medium, is fundamental to development, stress management, navigating life, and one’s well-being. We strive to provide equitable access to creating art, through education. Our particular medium is photography with an emphasis on analogue methods, but all arts and methods are encouraged in the space. Photographic arts can have a particularly high cost barrier for entry, and we work to break that barrier down. We also serve as a community space.'
+# NOTE: processes, formats, and neighborhoods are taxonomy terms for
+# browsing/filtering labs. They are hand-maintained and NOT derived from
+# params.capability below - if you add/remove a format or chemistry in
+# capability, update these lists to match.
+processes: ["C41", "B&W", "E6", "ECN-2"]
+formats: [135, 120]
+neighborhoods: ["Tacoma"]
 params:
-  neighborhood: "Tacoma"
   address: "1720 S 7th St Suite 103, Tacoma, WA 98405"
   url: "https://www.tacomaphotocenter.org/film-development-shop-hours"
   capability:

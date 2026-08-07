@@ -5,8 +5,14 @@ draft: false
 title: 'Moon Photo'
 summary: 'A photo lab in Ballard.'
 description: 'Nestled in between Seattle’s Phinney Ridge and Ballard Neighborhood, Moonphoto is a professional photography lab that’s been in business for over 50 years. We specialize in high quality prints and scans as well as the digital restoration of old and damaged prints. We cater to both professional and amateur photographers as well as other visual artists, various professionals and the general public.'
+# NOTE: processes, formats, and neighborhoods are taxonomy terms for
+# browsing/filtering labs. They are hand-maintained and NOT derived from
+# params.capability below - if you add/remove a format or chemistry in
+# capability, update these lists to match.
+processes: ["C41", "B&W", "E6"]
+formats: [135, 120]
+neighborhoods: ["Ballard"]
 params:
-  neighborhood: "Ballard"
   address: "6751 8th Avenue NW, Seattle, WA 98117, USA"
   url: "https://www.moonphotolab.com"
   capability:

@@ -1,12 +1,18 @@
 ---
 date: '2026-08-05'
 lastmod: '2026-08-06'
-draft: true
+draft: false
 title: 'Panda Lab'
 summary: 'A small photo lab in Seattle Center.'
 description: 'Panda Lab is dedicated to the proposition that the custom photo lab should not become an endangered species. We founded Panda in 1983 to provide superior traditional black & white processing and printing to the most demanding professional, commercial, and discerning amateur clients. Our work has traveled around the world in countless images viewed in print publications, on museum walls, on the pages of family scrapbooks, and these days, on the latest high-tech monitors.'
+# NOTE: processes, formats, and neighborhoods are taxonomy terms for
+# browsing/filtering labs. They are hand-maintained and NOT derived from
+# params.capability below - if you add/remove a format or chemistry in
+# capability, update these lists to match.
+processes: ["C41", "B&W", "E6"]
+formats: [135, 120]
+neighborhoods: ["Downtown"]
 params:
-  neighborhood: "Downtown"
   address: "533 Warren Ave N, Seattle, WA 98109"
   url: "https://pandalab.com"
   capability:
@@ -124,10 +130,10 @@ params:
     - name: "Extra Set of Prints (120)"
       cost: 7.0
   testimonials:
-    - date: '2060-08-04'
+    - date: '2026-08-04'
       content: "My fav lab. In last 4yrs, I had all kinds of 35mm, 120 film developed there and 2 sheets of 4x5 b/w also."
-    - date: '2060-08-04'
+    - date: '2026-08-04'
       content: "My personal fav! They are super knowledgeable and accommodating, they have developed 6 rolls of C41 for me and 8 E6 and they are always fast. They also willingly developed my bulk rolled film and gave me notes on how to spool it the correct length for their developing tank. Their prices have gone up significantly recently but I still go regularly."
-    - date: '2060-08-04'
+    - date: '2026-08-04'
       content: "This is also the lab I use the most for development. They're super nice. My only complaint is that their hours can sometimes be a bit weird - and yes as Harry mentioned above, their prices have risen quite a bit. But I don't really think anyone compares with the speed and quality Panda delivers."
 ---

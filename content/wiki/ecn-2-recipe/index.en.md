@@ -7,6 +7,7 @@ summary: 'A page'
 description: 'A page with information'
 params:
   author: "Seth - @fl3tching101"
+  originalLink: "https://sethshootsfilm.com/blog/ecn_2_diy_recipe.html"
 tags:
 # - foo
 menus:

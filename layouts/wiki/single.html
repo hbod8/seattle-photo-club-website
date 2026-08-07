@@ -1,0 +1,10 @@
+{{ define "title" }}
+  {{ .Title }}
+{{ end }}
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ if .Params.originalLink }}
+  <h3>This section is a copy of content hosted by the author here: <a href="{{ .Params.originalLink }}">Link &#x1F517;</a></h3>
+  {{ end }}
+  {{ .Content }}
+{{ end }}

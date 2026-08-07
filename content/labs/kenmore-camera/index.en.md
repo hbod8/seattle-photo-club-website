@@ -5,8 +5,14 @@ draft: false
 title: 'Kenmore Camera'
 summary: 'A camera shop and photo lab.'
 description: 'Family owned and operated since 1974, Kenmore Camera has grown to become the Northwest leader in photographic equipment and accessories.  With a staff of knowledgeable professionals, we offer friendly customer service to all who enjoy the every-changing field of photography.'
+# NOTE: processes, formats, and neighborhoods are taxonomy terms for
+# browsing/filtering labs. They are hand-maintained and NOT derived from
+# params.capability below - if you add/remove a format or chemistry in
+# capability, update these lists to match.
+processes: ["C41"]
+formats: [135, "APS"]
+neighborhoods: ["Eastside"]
 params:
-  neighborhood: "Eastside"
   address: "6708 NE 181st St., PO Box 82467, Kenmore, WA 98028"
   url: "https://kenmorecamera.com/photo-lab/"
   capability:

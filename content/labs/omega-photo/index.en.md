@@ -5,8 +5,14 @@ draft: false
 title: 'Omega Photo'
 summary: 'A small photo lab on the eastside.'
 description: "Located in Bellevue between the Arco station and Sound Transit's Wilberton station, Omega Photo is the premiere Eastside Photo Specialist. We offer a variety of equipment, developing, and retouching services. Please browse through our products online or give us a call if you are looking for something specific. Let Omega meet all your photography needs!"
+# NOTE: processes, formats, and neighborhoods are taxonomy terms for
+# browsing/filtering labs. They are hand-maintained and NOT derived from
+# params.capability below - if you add/remove a format or chemistry in
+# capability, update these lists to match.
+processes: ["C41", "E6"]
+formats: [135, 120]
+neighborhoods: ["Eastside"]
 params:
-  neighborhood: "Eastside"
   address: "11643 NE 8th St, Bellevue, WA 98005, USA"
   url: "https://www.omegaphoto.biz/"
   capability:

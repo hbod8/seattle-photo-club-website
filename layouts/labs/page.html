@@ -4,6 +4,50 @@
 {{ define "main" }}
   <main>
     <h2>{{ .Title }}</h2>
-    {{ .Content }}
+    <h3>
+      <a href="{{ .Params.url }}">Website &#x1F517;</a>
+    </h3>
+    <h3>{{ .Params.address }}</h3>
+    <div>
+      <h3>Formats:
+      {{ range .GetTerms "formats" }}
+      <span class="icon">{{ .Title }}</span>
+      {{ end }}
+      </h3>
+    </div>
+    <div>
+      <h3>Processes:
+      {{ range .GetTerms "processes" }}
+      <span class="icon">{{ .Title }}</span>
+      {{ end }}
+      </h3>
+    </div>
+    <p>{{ .Description }}</p>
+    <h3>Prices<em> as of {{ time.Format "January 2, 2006" .Lastmod }}</em></h3>
+    {{ range .Params.capability }}
+    <h4>{{ .format }} - {{ .chemistry }}</h4>
+    <ul>
+      {{ range .cost }}
+      <li>{{ .type }}: {{ .cost | lang.FormatCurrency 2 "USD" }}</li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ range .Params.addons }}
+    <h4>{{ .name }}</h4>
+    {{ if .description }}
+    <p>{{ .cost | lang.FormatCurrency 2 "USD" }} - <em>{{ .description }}</em></p>
+    {{ else }}
+    <p>{{ .cost | lang.FormatCurrency 2 "USD" }}</p>
+    {{ end }}
+    {{ end }}
+    {{ with .Params.testimonials }}
+    <h3>Member Testimonials:</h3>
+    {{ range . }}
+    <div>
+      <em>{{ .content }}</em>
+      <p>-{{ time.Format "January 2, 2006" .date }}</p>
+    </div>
+    {{ end }}
+    {{ end }}
   </main>
 {{ end }}

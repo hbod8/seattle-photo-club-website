@@ -1,13 +1,15 @@
 {{ define "main" }}
-<main>
   <h1>{{ .Title }}</h1>
   <ul>
     {{ range sort .Pages "PublishDate" "desc" }}
     <li>
+      {{ if .Params.link }}
       <h3><a href="{{ .Params.link }}">{{ .Title }}</a> — {{ .Params.author }} — {{ time.Format "January 2, 2006" .PublishDate }}</h3>
+      {{ else }}
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Params.author }} — {{ time.Format "January 2, 2006" .PublishDate }}</h3>
+      {{ end }}
       <p>{{ .Content }}</p>
     </li>
     {{ end }}
   </ul>
-</main>
 {{ end }}

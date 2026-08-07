@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "berthold-block";
+  src: url("BlockBerthold.ttf");
+}
+
+@font-face {
+  font-family: "Arbutus Slab";
+  src: url("ArbutusSlab-Regular.ttf");
+}
+
 :root {
   background-color: #fefff7;
 }
@@ -7,7 +17,8 @@ body {
   background-repeat: repeat;
   background-size: 500px 500px; */
 
-  font-family: "berthold-block-w1g", sans-serif;
+  /* font-family: "berthold-block", sans-serif; */
+  font-family: "Arbutus Slab", sans-serif;
   font-style: normal;
   color: var(--font-color);
 }
@@ -23,7 +34,9 @@ a :visited {
 p {
   font-weight: 100;
 }
+
 h1,h2,h3,h4,h5,h6 {
+  font-family: "berthold-block", sans-serif;
   font-weight: 800;
 }
 
@@ -37,6 +50,12 @@ body {
 
 main {
   margin: 1.2rem;
+}
+
+main img {
+  max-width: 40rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 footer {
@@ -69,6 +88,7 @@ menu :first-child {
 menu a {
   text-decoration: none;
   font-size: 1.6rem;
+  font-family: "berthold-block", sans-serif;
 }
 
 section {
@@ -115,6 +135,7 @@ section.featured>div>a>small {
 section.featured>div>a>img {
   max-height: 30rem;
   max-width: 100%;
+  margin: 0;
 }
 
 section.feed>ul {
@@ -129,6 +150,31 @@ section.feed>ul>li>h3 {
 section.feed>ul>li>p {
   margin-top: .2rem;
   margin-bottom: .2rem;
+}
+
+div.lab-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.lab-cards h2 {
+  margin: .5rem 0;
+}
+
+div.lab-cards h3 {
+  margin: .5rem 0;
+}
+
+div.lab-cards p {
+  margin: .5rem 0;
+}
+
+.icon {
+  display: inline-block;
+  color: #fefff7;
+  background-color: #454545;
+  padding: .1rem .2rem;
+  border-radius: 2px;
 }
 
 @media (width <= 800px) {
@@ -169,5 +215,9 @@ section.feed>ul>li>p {
   section.featured>div>a>img {
     max-height: 20vh;
     max-width: none;
+  }
+
+  div.lab-cards {
+    grid-template-columns: 1fr;
   }
 }

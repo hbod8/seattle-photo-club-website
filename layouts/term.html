@@ -1,0 +1,31 @@
+{{ define "title" }}
+  {{ .Title }}
+{{ end }}
+{{ define "main" }}
+    <h2>{{ .Title }}</h2>
+    <div class="lab-cards">
+    {{ range .Pages }}
+    <section>
+      <h2>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+      <p>
+        {{ range .GetTerms "neighborhoods" }}
+        {{ .Title }}
+        {{ end }}
+      </p>
+      <div>
+        {{ range .GetTerms "formats" }}
+        <h3 class="icon">{{ .Title }}</h3>
+        {{ end }}
+      </div>
+      <div>
+        {{ range .GetTerms "processes" }}
+        <h3 class="icon">{{ .Title }}</h3>
+        {{ end }}
+      </div>
+      <p>{{ .Description }}</p>
+    </section>
+    {{ end }}
+  </div>
+{{ end }}

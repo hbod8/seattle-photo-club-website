@@ -5,8 +5,14 @@ draft: false
 title: "Glazer's Photo Lab"
 summary: 'A photo lab in Seattle Center.'
 description: "Glazer's Camera is the Northwest's premier source for photo and video equipment and supplies. We are a third generation, locally owned full-line camera store with a strong commitment to stock everything the working professional and serious hobbyist needs to properly pursue the craft."
+# NOTE: processes, formats, and neighborhoods are taxonomy terms for
+# browsing/filtering labs. They are hand-maintained and NOT derived from
+# params.capability below - if you add/remove a format or chemistry in
+# capability, update these lists to match.
+processes: ["C41", "B&W"]
+formats: [135, 120, "110"]
+neighborhoods: ["Downtown"]
 params:
-  neighborhood: "Downtown"
   address: "811 Republican St, Seattle, WA 98109"
   url: "https://www.glazerscameraphotolab.com/film-developing-and-scanning"
   capability:

@@ -15,32 +15,30 @@
     <!-- CSS only -->
     {{ block "styles" . }}
       <link rel="stylesheet" href="{{ "stylesheet.css" | relURL }}">
-      {{ with resources.Get "logo.png" }}
-        {{ with .Process "resize 167x167 png" }}
-          <link rel="apple-touch-icon" sizes="167x167"  href="{{ .RelPermalink }}" type="image/png">
-        {{ end }}
-        {{ with .Process "resize 180x180 png" }}
-          <link rel="apple-touch-icon" sizes="180x180"  href="{{ .RelPermalink }}" type="image/png">
-        {{ end }}
-        {{ with .Process "resize 152x152 png" }}
-          <link rel="apple-touch-icon" sizes="152x152"  href="{{ .RelPermalink }}" type="image/png">
-        {{ end }}
-        {{ with .Process "resize 16x16 png" }}
-          <link rel="icon" sizes="16x16" href="{{ .RelPermalink }}" type="image/png">
-        {{ end }}
-        {{ with .Process "resize 32x32 png" }}
-          <link rel="icon" sizes="32x32" href="{{ .RelPermalink }}" type="image/png">
-        {{ end }}
-        {{ with .Process "resize 48x48 png" }}
-          <link rel="icon" sizes="48x48" href="{{ .RelPermalink }}" type="image/png">
-        {{ end }}
-        {{ with .Process "resize 192x192 png" }}
-          <link rel="icon" sizes="192x192" href="{{ .RelPermalink }}" type="image/png">
-        {{ end }}
+    {{ with resources.Get "logo.png" }}
+      {{ with .Process "resize 167x167 png" }}
+        <link rel="apple-touch-icon" sizes="167x167"  href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 180x180 png" }}
+        <link rel="apple-touch-icon" sizes="180x180"  href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 152x152 png" }}
+        <link rel="apple-touch-icon" sizes="152x152"  href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 16x16 png" }}
+        <link rel="icon" sizes="16x16" href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 32x32 png" }}
+        <link rel="icon" sizes="32x32" href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 48x48 png" }}
+        <link rel="icon" sizes="48x48" href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 192x192 png" }}
+        <link rel="icon" sizes="192x192" href="{{ .RelPermalink }}" type="image/png">
       {{ end }}
     {{ end }}
-    <!-- Adobe font used in logo -->
-    <link rel="stylesheet" href="https://use.typekit.net/ena7orz.css">
+    {{ end }}
     <!-- opengraph metadata -->
     {{ partial "opengraph.html" . }}
     <!-- schema metadata -->

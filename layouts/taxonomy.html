@@ -3,7 +3,7 @@
     <h1>{{ .Title }}</h1>
   </header>
   <h5>
-    {{ range .Pages.ByDate.Reverse }}
+    {{ range .Pages }}
       <a href="{{ .RelPermalink }}">
         {{ .Title }}
       </a>

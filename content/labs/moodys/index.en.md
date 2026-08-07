@@ -5,8 +5,14 @@ draft: false
 title: "Moody's Film Lab"
 summary: 'A film lab in Burien.'
 description: 'We want to make film as accessible as possible to make it enjoyable for everyone. We offer developing of all kinds, scanning, and printing. Check us out on Instagram for the latest and greatest of all things Moody’s.'
+# NOTE: processes, formats, and neighborhoods are taxonomy terms for
+# browsing/filtering labs. They are hand-maintained and NOT derived from
+# params.capability below - if you add/remove a format or chemistry in
+# capability, update these lists to match.
+processes: ["C41", "B&W", "E6"]
+formats: [135, 120]
+neighborhoods: ["Renton"]
 params:
-  neighborhood: "Renton"
   address: "831 SW 149th St, Burien, WA 98166"
   url: "https://www.moodysfilm.com"
   capability:

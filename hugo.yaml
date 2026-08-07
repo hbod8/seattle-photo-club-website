@@ -9,3 +9,18 @@ menu:
   main:
     - name: Discord
       url: https://discord.gg/VDn6eDccS9
+# taxonomies for browsing/filtering labs by their capability data
+taxonomies:
+  process: processes
+  format: formats
+  neighborhood: neighborhoods
+# custom overrides for lab taxonomies
+permalinks:
+  taxonomy:
+    processes: /labs/:slug/
+    formats: /labs/:slug/
+    neighborhoods: /labs/:slug/
+  term:
+    processes: /labs/:section/:slug/
+    formats: /labs/:section/:slug/
+    neighborhoods: /labs/:section/:slug/
