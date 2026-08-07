@@ -5,7 +5,7 @@
   <h3>
     Labs by Process:
     {{ range .ByCount }}
-    <a class="icon" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+    <a href="{{ .Page.RelPermalink }}">{{ partial "process-icon.html" .Page.Title }}</a>&nbsp;
     {{ end }}
   </h3>
   {{ end }}
@@ -13,7 +13,7 @@
   <h3>
     Labs by Format:
     {{ range .ByCount }}
-    <a class="icon" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+    <a href="{{ .Page.RelPermalink }}">{{ partial "format-icon.html" .Page.Title }}</a>&nbsp;
     {{ end }}
   </h3>
   {{ end }}
@@ -21,34 +21,10 @@
   <h3>
     Labs by Neighborhood:
     {{ range .ByCount }}
-    <a class="icon" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+    <a class="icon" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>&nbsp;
     {{ end }}
   </h3>
   {{ end }}
-  <div class="lab-cards">
-    {{ range .Pages }}
-    <section>
-      <h2>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h2>
-      <p>
-        {{ range .GetTerms "neighborhoods" }}
-        {{ .Title }}
-        {{ end }}
-      </p>
-      <div>
-        {{ range .GetTerms "formats" }}
-        <h3 class="icon">{{ .Title }}</h3>
-        {{ end }}
-      </div>
-      <div>
-        {{ range .GetTerms "processes" }}
-        <h3 class="icon">{{ .Title }}</h3>
-        {{ end }}
-      </div>
-      <p>{{ .Description }}</p>
-    </section>
-    {{ end }}
-  </div>
+  {{ partial "lab-cards.html" .Pages }}
 </main>
 {{ end }}

@@ -8,6 +8,16 @@
   src: url("ArbutusSlab-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Google Sans";
+  src: url("GoogleSans.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("Inter.ttf");
+}
+
 :root {
   background-color: #fefff7;
 }
@@ -19,6 +29,8 @@ body {
 
   /* font-family: "berthold-block", sans-serif; */
   font-family: "Arbutus Slab", sans-serif;
+  /* font-family: "Google Sans", sans-serif; */
+  /* font-family: "Inter", sans-serif; */
   font-style: normal;
   color: var(--font-color);
 }
@@ -32,7 +44,7 @@ a :visited {
 }
 
 p {
-  font-weight: 100;
+  font-weight: 400;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -175,6 +187,38 @@ div.lab-cards p {
   background-color: #454545;
   padding: .1rem .2rem;
   border-radius: 2px;
+}
+
+.c41-icon {
+  display: inline-block;
+  color: #fefff7;
+  background: linear-gradient(cyan, magenta, yellow);
+  padding: .1rem .2rem;
+  border-radius: 2px;
+}
+
+.e6-icon {
+  display: inline-block;
+  color: #fefff7;
+  background: linear-gradient(red, green, blue);
+  padding: .1rem .2rem;
+  border-radius: 2px;
+}
+
+.ecn2-icon {
+  display: inline-block;
+  color: #fefff7;
+  background: linear-gradient(cyan, magenta, yellow);
+  padding: .1rem .2rem;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+.svg-icon {
+  max-height: 1em;
+  max-width: 1.6em;
+  display: inline-block;
+  margin: 0;
 }
 
 @media (width <= 800px) {

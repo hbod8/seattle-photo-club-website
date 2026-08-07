@@ -18,7 +18,7 @@
     <div>
       <h3>Processes:
       {{ range .GetTerms "processes" }}
-      <span class="icon">{{ .Title }}</span>
+      {{ partial "process-icon.html" .Title }}
       {{ end }}
       </h3>
     </div>

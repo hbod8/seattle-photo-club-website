@@ -1,0 +1,9 @@
+{{- if eq . "C41" -}}
+<span class="c41-icon">{{ . }}</span>
+{{- else if eq . "E6" -}}
+<span class="e6-icon">{{ . }}</span>
+{{- else if eq . "ECN2" -}}
+<span class="ecn2-icon">{{ . }}</span>
+{{- else -}}
+<span class="icon">{{ . }}</span>
+{{- end -}}

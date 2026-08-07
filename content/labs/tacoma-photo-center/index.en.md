@@ -9,7 +9,7 @@ description: 'Art is a journey for everyone. Creating art, in any medium, is fun
 # browsing/filtering labs. They are hand-maintained and NOT derived from
 # params.capability below - if you add/remove a format or chemistry in
 # capability, update these lists to match.
-processes: ["C41", "B&W", "E6", "ECN-2"]
+processes: ["C41", "B&W", "E6", "ECN2"]
 formats: [135, 120]
 neighborhoods: ["Tacoma"]
 params:
@@ -59,7 +59,7 @@ params:
         - type: "Develop and Scan"
           cost: 19.0
     - format: 135
-      chemistry: "ECN-2"
+      chemistry: "ECN2"
       cost:
         - type: "Develop Only"
           cost: 12.0
