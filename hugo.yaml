@@ -4,6 +4,9 @@ deployment:
   targets:
   - name: default
     url: s3://www.seattlephoto.club?region=us-west-2
+services:
+  googleAnalytics:
+    id: G-8HBJZB9PXR
 # the following adds the discord link to the menu
 menu:
   main:

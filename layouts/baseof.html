@@ -45,6 +45,8 @@
     {{ partial "schema.html" . }}
     <!-- twitter card metadata -->
     {{ partial "twitter_cards.html" . }}
+    <!-- Google Analytics -->
+    {{ template "_internal/google_analytics.html" . }}
   </head>
   <body>
     {{ block "body" . }}
