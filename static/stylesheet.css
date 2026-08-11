@@ -215,10 +215,22 @@ div.lab-cards p {
 }
 
 .svg-icon {
-  max-height: 1em;
+  max-height: .7em;
   max-width: 1.6em;
   display: inline-block;
   margin: 0;
+}
+
+.format-icon {
+  align-items: center;
+  color: #fefff7;
+  background-color: #454545;
+  padding: .1rem .3rem;
+  border-radius: 2px;
+}
+
+.format-icon .svg-icon {
+  filter: invert(1);
 }
 
 @media (width <= 800px) {

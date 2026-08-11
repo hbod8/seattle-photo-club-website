@@ -10,9 +10,11 @@
       {{ end }}
     </p>
     <div>
-      {{ range .GetTerms "formats" }}
-      <h3 class="icon">{{ .Title }}</h3>
-      {{ end }}
+      <h3>
+        {{ range .GetTerms "formats" }}
+        {{ partial "format-icon.html" .Title }}
+        {{ end }}
+      </h3>
     </div>
     <div>
       <h3>

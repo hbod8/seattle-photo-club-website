@@ -11,7 +11,7 @@
     <div>
       <h3>Formats:
       {{ range .GetTerms "formats" }}
-      <span class="icon">{{ .Title }}</span>
+      {{ partial "format-icon.html" .Title }}
       {{ end }}
       </h3>
     </div>
