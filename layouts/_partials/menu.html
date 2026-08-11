@@ -6,7 +6,13 @@
   {{ end }}
 </a>
 {{ range site.Menus.main }}
+{{ with .Page }}
+<a {{ with .Params.class -}} class="{{ . }}" {{ end -}} href="{{ .RelPermalink }}">
+  {{ .Title }}
+</a>
+{{ else }}
 <a {{ with .Params.class -}} class="{{ . }}" {{ end -}} href="{{ .URL }}">
   {{ .Name }}
 </a>
+{{ end }}
 {{ end }}

@@ -1,10 +1,6 @@
 ---
 draft: true
-title: 'Members'
-summary: 'A page'
-description: 'A page with information'
-tags:
-# - foo
-menus:
-  - main
+title: 'Portfolio'
+summary: 'A collection of member portfolios.'
+description: 'A collection of member portfolios.'
 ---

@@ -1,0 +1,22 @@
+{{ $source := . }}
+{{ with hugo.Data.members }}
+  {{ range .members }}
+    {{ $member := . }}
+    {{ $page := dict
+      "build" (dict
+        "render" false
+        "list" "always")
+      "content" (dict
+        "mediaType" "text/html"
+        "value" ($member.description | safeHTML))
+      "kind" "page"
+      "params" (dict
+        "link" $member.url)
+      "path" (anchorize $member.name)
+      "title" $member.name
+    }}
+    {{ $source.AddPage $page }}
+  {{ end }}
+{{ else }}
+  {{ warnf "Could not load members data yaml." }}
+{{ end }}

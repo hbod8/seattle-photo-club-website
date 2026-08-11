@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <ul class="member-list">
+    {{ range .Pages.ByTitle }}
+    <li>
+      <h3><a href="{{ .Params.link }}">{{ .Title }}</a></h3>
+      <p>{{ .Content }}</p>
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}

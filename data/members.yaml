@@ -1,0 +1,42 @@
+members:
+  - name: Harry Saliba
+    url: https://harrysaliba.com/
+    description: "A personal portfolio and technical blog."
+    feed:
+      url: https://harrysaliba.com/index.xml
+      type: rss
+  - name: Aimee
+    url: https://aimeeis.cool
+    description: "Blog like it’s 1999."
+    feed:
+      url: https://aimeeis.cool/feed/
+      type: rss
+  - name: Anders Conbere
+    url: https://anders.conbere.org/
+    description: "I am a film photographer and print maker and I can often be found in my basement lab developing film or mixing strange chemicals."
+    feed:
+      url: https://anders.conbere.org/blog/atom.xml
+      type: atom
+  - name: Elano
+    url: https://www.eellaannoo.com/
+    description: "In love with life."
+  - name: Lowleft
+    url: https://lowleft.photos
+    description: "Photography portfolio. Landscapes, infrared, analog, and motors."
+  - name: Mrinabh Dutta
+    url: https://www.mrinabh.com/
+    description: "Photographs from around the world by Mrinabh Dutta"
+  - name: Ariston
+    url: https://www.ariston.photo
+    description: "Capture the World with Me"
+  - name: Becca
+    url: https://rauchfirephoto.smugmug.com
+    description: "Becca Rauch is an adventurer based out of the Pacific Northwest - A place she calls home and has a certain spiritual connection to."
+  - name: Alain
+    url: https://aokframes.com/
+    description: "Alain is a photographer with a love for visual storytelling."
+  - name: kouji
+    url: https://flickr.com/photos/wutdowut/
+  - name: Jerry Ann
+    url: https://www.deddoarts.com/
+    description: "Jerry Ann is a Pacific Northwest based fine art photographer who has been practicing photography since she purchased her first 35mm film camera in 1991."

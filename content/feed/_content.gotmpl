@@ -1,6 +1,8 @@
 {{ $source := . }}
-{{ with hugo.Data.feeds }}
-  {{ range .feeds }}
+{{ with hugo.Data.members }}
+  {{ range .members }}
+    {{ $member := . }}
+    {{ with .feed }}
     {{ $feed := . }}
     {{ with resources.GetRemote .url }}
       {{ with . | transform.Unmarshal }}
@@ -54,15 +56,16 @@
           {{ $source.AddPage $page }}
         {{ end }}
         {{ else }}
-          {{ warnf "Unknown feed type %s" .feed.name }}
+          {{ warnf "Unknown feed type %s for member %s" $feed.type $member.name }}
         {{ end }}
       {{ else }}
-        {{ warnf "Failed to parse feed for " .name }}
+        {{ warnf "Failed to parse feed for %s" $member.name }}
       {{ end }}
     {{ else }}
-      {{ warnf "Failed to get url for " .name }}
+      {{ warnf "Failed to get feed url for %s" $member.name }}
+    {{ end }}
     {{ end }}
   {{ end }}
 {{ else }}
-  {{ warnf "Could not load feed source yaml." }}
+  {{ warnf "Could not load members data yaml." }}
 {{ end }}

@@ -28,8 +28,8 @@ body {
   background-size: 500px 500px; */
 
   /* font-family: "berthold-block", sans-serif; */
-  font-family: "Arbutus Slab", sans-serif;
-  /* font-family: "Google Sans", sans-serif; */
+  /* font-family: "Arbutus Slab", sans-serif; */
+  font-family: "Google Sans", sans-serif;
   /* font-family: "Inter", sans-serif; */
   font-style: normal;
   color: var(--font-color);
@@ -231,6 +231,10 @@ div.lab-cards p {
 
 .format-icon .svg-icon {
   filter: invert(1);
+}
+
+.member-list {
+  list-style: none;
 }
 
 @media (width <= 800px) {
