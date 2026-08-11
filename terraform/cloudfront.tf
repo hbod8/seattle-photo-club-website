@@ -38,6 +38,19 @@ resource "aws_cloudfront_origin_access_control" "site" {
   signing_protocol                  = "sigv4"
 }
 
+# The S3 REST origin (required for OAC) never appends index.html to
+# directory-style requests the way an S3 website endpoint would - only the
+# distribution root gets that via default_root_object. This function
+# replicates that behavior for every other path so pretty-URL pages
+# (e.g. /members/, /labs/foo/) resolve instead of 403ing.
+resource "aws_cloudfront_function" "index_rewrite" {
+  name    = "${replace(local.site_fqdn, ".", "-")}-index-rewrite"
+  runtime = "cloudfront-js-2.0"
+  comment = "Append index.html to directory-style requests"
+  publish = true
+  code    = file("${path.module}/functions/index-rewrite.js")
+}
+
 resource "aws_cloudfront_distribution" "site" {
   enabled             = true
   is_ipv6_enabled     = true
@@ -64,6 +77,11 @@ resource "aws_cloudfront_distribution" "site" {
       cookies {
         forward = "none"
       }
+    }
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.index_rewrite.arn
     }
   }
 
