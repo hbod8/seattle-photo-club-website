@@ -1,0 +1,72 @@
+name: Build and deploy
+
+on:
+  # Merge check - the `build` job is the required status check on main.
+  pull_request:
+    branches: [main]
+  # Every PR merge.
+  push:
+    branches: [main]
+  # Nightly, to pick up new posts from the member RSS/Atom feeds that
+  # content/feed/_content.gotmpl pulls in at build time.
+  #
+  # Cron is UTC and GitHub does not adjust for daylight saving, so this is
+  # midnight PST / 01:00 PDT. Scheduled runs are also queued best-effort and
+  # can be delayed (or skipped entirely under load), so treat this as
+  # "overnight" rather than exactly midnight.
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+concurrency:
+  # PR builds supersede each other. Deploys queue instead of cancelling, so a
+  # nightly run and a freshly merged PR never race on the same bucket.
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  HUGO_VERSION: 0.160.1
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # mint the OIDC token that the AWS role assumption below exchanges
+
+    steps:
+      - uses: actions/checkout@v7
+
+      # The stock Hugo release binaries do not include the `deploy` command -
+      # it lives behind a build tag, and only the `withdeploy` release variant
+      # has it. No setup action publishes that variant, hence the manual
+      # install. `extended` matches the local toolchain (see README).
+      - name: Install Hugo
+        run: |
+          mkdir -p "$RUNNER_TEMP/hugo"
+          curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_withdeploy_${HUGO_VERSION}_linux-amd64.tar.gz" \
+            | tar -xz -C "$RUNNER_TEMP/hugo" hugo
+          echo "$RUNNER_TEMP/hugo" >> "$GITHUB_PATH"
+
+      - name: Show Hugo version
+        run: hugo version
+
+      # Deliberately no cache of resources/_gen: a cold cache guarantees the
+      # member feeds are re-fetched on every run, which is the entire point of
+      # the nightly build.
+      - name: Build site
+        run: hugo --minify
+
+      - name: Configure AWS credentials
+        if: github.event_name != 'pull_request'
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-west-2
+
+      # Syncs public/ to the S3 bucket and invalidates CloudFront, both
+      # configured under `deployment` in hugo.yaml.
+      - name: Deploy
+        if: github.event_name != 'pull_request'
+        run: hugo deploy
