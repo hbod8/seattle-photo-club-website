@@ -33,6 +33,11 @@ output "route53_name_servers" {
   value       = aws_route53_zone.site.name_servers
 }
 
+output "github_actions_deploy_role_arn" {
+  description = "IAM role the deploy workflow assumes. Store as the AWS_DEPLOY_ROLE_ARN repository secret."
+  value       = aws_iam_role.github_actions_deploy.arn
+}
+
 output "spc_mod_initial_password" {
   description = "Initial console password for spc-mod (must be changed on first login via `aws login`). Retrieve once with: terraform output -raw spc_mod_initial_password"
   value       = aws_iam_user_login_profile.spc_mod.password
