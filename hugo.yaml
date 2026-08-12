@@ -4,6 +4,9 @@ deployment:
   targets:
   - name: default
     url: s3://www.seattlephoto.club?region=us-west-2
+    # invalidate the CDN after upload, otherwise changes sit behind the
+    # CloudFront cache until the TTL expires
+    cloudFrontDistributionID: E9FEXI87RY55Q
 services:
   googleAnalytics:
     id: G-8HBJZB9PXR
