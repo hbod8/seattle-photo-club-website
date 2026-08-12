@@ -15,6 +15,12 @@ variable "site_subdomain" {
   default     = ""
 }
 
+variable "github_repository" {
+  description = "GitHub repository (owner/name) whose Actions workflows may assume the deploy role via OIDC"
+  type        = string
+  default     = "hbod8/seattle-photo-club-website"
+}
+
 variable "index_document" {
   description = "S3 key of the default index document"
   type        = string
