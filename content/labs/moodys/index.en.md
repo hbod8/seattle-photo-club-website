@@ -11,7 +11,7 @@ description: 'We want to make film as accessible as possible to make it enjoyabl
 # capability, update these lists to match.
 processes: ["C41", "B&W", "E6"]
 formats: [135, 120]
-neighborhoods: ["Renton"]
+neighborhoods: ["Burien"]
 params:
   address: "831 SW 149th St, Burien, WA 98166"
   url: "https://www.moodysfilm.com"
