@@ -57,6 +57,15 @@ members:
   - name: Forrest Bourke
     url: https://forrestbourke.com/
     description: "Hello, my name is Forrest Bourke and this is my website."
+    feed:
+      url: https://forrestbourke.com/rss.xml
+      type: rss
   - name: Savannah
     url: http://savannahjacobson.com
     description: "I am a portrait, street, and documentary photographer in Seattle. My focus is working in social justice and economic empowerment. I collaborate with non-profits, street papers, and individuals. I am open to commissions."
+  - name: Michael Drapeau
+    url: https://deadpixelfpc.com
+    description: "Michael Drapeau is a skilled cinematographer with a passion for creating impactful visual narratives. Currently completing his BA in Media Production at the University of Colorado Boulder, he brings a blend of technical expertise and creativity to each project."
+  - name: Quintin Doroquez
+    url: https://www.instagram.com/the_q
+    description: "Poly-camerous. Personal Work in Analog + Digital."
