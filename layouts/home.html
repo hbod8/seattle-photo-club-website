@@ -1,0 +1,57 @@
+{{ define "main" }}
+  <div class="home">
+    {{ with .Params.featured }}
+    <section class="featured">
+      {{ range . }}
+        {{ $item := . }}
+        {{ with resources.Get ( path.Join "featured" .file ) }}
+          {{ with .Process "resize x480 png" }}
+            <div>
+              <a href="{{ $item.link }}">
+                <img src="{{ .RelPermalink }}" alt="{{ $item.caption }}">
+                <small>{{ $item.subtext }}</small>
+              </a>
+            </div>
+          {{ end }}
+        {{ else }}
+          {{ warnf "Missing image for featured item %s" .caption }}
+        {{ end }}
+      {{ end }}
+    </section>
+    {{ else }}
+      {{ warnf "Missing featured params, omitting homepage gallery." }}
+    {{ end }}
+
+    {{ with site.GetPage "feed" }}
+    <section class="feed">
+      <h1>Recent Member Posts</h1>
+      <ul>
+        {{ range first 5 (sort .Pages "PublishDate" "desc") }}
+        <li>
+          <h3><a href="{{ .Params.link }}">{{ .Title }}</a> — {{ .Params.author }} — {{ time.Format "January 2, 2006" .PublishDate }}</h3>
+          <p>{{ .Content }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ else }}
+      {{ warnf "Failed to load the feeds on the homepage. omitting the html."}}
+    {{ end }}
+
+    {{ with site.GetPage "wiki" }}
+    <section class="feed">
+      <h1>Recent Wiki Updates</h1>
+      <ul>
+        {{ range first 5 (sort .Pages "Lastmod" "desc") }}
+        <li>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Params.author }} — {{ time.Format "January 2, 2006" .Lastmod }}</h3>
+          <p>{{ .Content | plainify | truncate 200 }}</p>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ else }}
+      {{ warnf "Failed to load wiki updates on the homepage. omitting the html."}}
+    {{ end }}
+  </div>
+{{ end }}

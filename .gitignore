@@ -1,0 +1,27 @@
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+tfplan*
+# .terraform.lock.hcl is intentionally NOT ignored - commit it to pin
+# provider versions.
+
+# Claude files
+.claude/
+
+.DS_Store

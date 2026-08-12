@@ -1,0 +1,24 @@
+{{ define "main" }}
+<!-- wiki/section -->
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ template "wikiTree" . }}
+{{ end }}
+
+{{ define "wikiTree" }}
+<ul>
+  {{ range .Sections.ByTitle }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ template "wikiTree" . }}
+  </li>
+  {{ end }}
+  {{ range .RegularPages.ByTitle }}
+  {{ if .Params.author }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }} <em>by {{ .Params.author }}</em></a></li>
+  {{ else }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+  {{ end }}
+</ul>
+{{ end }}

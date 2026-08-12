@@ -1,0 +1,71 @@
+{{ $source := . }}
+{{ with hugo.Data.members }}
+  {{ range .members }}
+    {{ $member := . }}
+    {{ with .feed }}
+    {{ $feed := . }}
+    {{ with resources.GetRemote .url }}
+      {{ with . | transform.Unmarshal }}
+        {{ if eq $feed.type "rss" }}
+          {{ $root := .channel }}
+          {{ range $root.item }}
+            {{ $summary := .description | plainify | truncate 200 }}
+            {{ $link := .link }}
+            {{ if not (strings.HasPrefix $link "http") }}
+              {{ $feedURL := urls.Parse $feed.url }}
+              {{ $link = printf "%s://%s%s" $feedURL.Scheme $feedURL.Host $link }}
+            {{ end }}
+            {{ $page := dict
+              "build" (dict
+                "render" false
+                "list" "always")
+              "content" (dict
+                "mediaType" "text/html"
+                "value" ($summary | safeHTML))
+              "dates" (dict
+                "publishDate" (time.AsTime .pubDate))
+              "kind" "page"
+              "params" (dict
+                "author" $root.title
+                "link" $link)
+              "path" (path.Join (anchorize $root.title) (anchorize .title))
+              "title" .title
+            }}
+          {{ $source.AddPage $page }}
+        {{ end }}
+        {{ else if eq $feed.type "atom" }}
+          {{ $root := . }}
+          {{ range $root.entry }}
+            {{ $summary := index .content "#text" | plainify | truncate 200 }}
+            {{ $page := dict
+              "build" (dict
+                "render" false
+                "list" "always")
+              "content" (dict
+                "mediaType" "text/html"
+                "value" ($summary | safeHTML))
+              "dates" (dict
+                "publishDate" (time.AsTime .published))
+              "kind" "page"
+              "params" (dict
+                "author" .author.name
+                "link" (index .link "-href"))
+              "path" (path.Join (anchorize $root.title) (anchorize .title))
+              "title" .title
+            }}
+          {{ $source.AddPage $page }}
+        {{ end }}
+        {{ else }}
+          {{ warnf "Unknown feed type %s for member %s" $feed.type $member.name }}
+        {{ end }}
+      {{ else }}
+        {{ warnf "Failed to parse feed for %s" $member.name }}
+      {{ end }}
+    {{ else }}
+      {{ warnf "Failed to get feed url for %s" $member.name }}
+    {{ end }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ warnf "Could not load members data yaml." }}
+{{ end }}

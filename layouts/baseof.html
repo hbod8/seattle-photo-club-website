@@ -1,0 +1,80 @@
+<!--
+  Seattle Photo Club
+  Harry Saliba 2026
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {{ block "title" . }}
+        {{ .Site.Title }}
+      {{ end }}
+    </title>
+    <!-- CSS only -->
+    {{ block "styles" . }}
+      <link rel="stylesheet" href="{{ "stylesheet.css" | relURL }}">
+    {{ with resources.Get "logo.png" }}
+      {{ with .Process "resize 167x167 png" }}
+        <link rel="apple-touch-icon" sizes="167x167"  href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 180x180 png" }}
+        <link rel="apple-touch-icon" sizes="180x180"  href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 152x152 png" }}
+        <link rel="apple-touch-icon" sizes="152x152"  href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 16x16 png" }}
+        <link rel="icon" sizes="16x16" href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 32x32 png" }}
+        <link rel="icon" sizes="32x32" href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 48x48 png" }}
+        <link rel="icon" sizes="48x48" href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+      {{ with .Process "resize 192x192 png" }}
+        <link rel="icon" sizes="192x192" href="{{ .RelPermalink }}" type="image/png">
+      {{ end }}
+    {{ end }}
+    {{ end }}
+    <!-- opengraph metadata -->
+    {{ partial "opengraph.html" . }}
+    <!-- schema metadata -->
+    {{ partial "schema.html" . }}
+    <!-- twitter card metadata -->
+    {{ partial "twitter_cards.html" . }}
+    <!-- Google Analytics -->
+    {{ template "_internal/google_analytics.html" . }}
+  </head>
+  <body>
+    {{ block "body" . }}
+    <menu>
+      {{ block "menu" . }}
+        {{ partial "menu.html" . }}
+      {{ end }}
+    </menu>
+    <main>
+      {{ block "main" . }}
+      {{ end }}
+    </main>
+    <footer>
+      {{ block "footer" . }}
+        <small>&copy; {{ time.Format "2006" time.Now }} Seattle Photo Club and Harry Saliba</small>
+        <small>icons by: <a href="https://thenounproject.com/creator/adauyek/">Assiya Dauyek</a></small>
+        <div>
+          {{ with resources.Get "instagram.svg" }}
+          {{ else }}
+            {{ warnf "Missing instagram icon."}}
+          {{ end }}
+          {{ with resources.Get "discord.svg" }}
+          {{ else }}
+            {{ warnf "Missing discord icon."}}
+          {{ end }}
+        </div>
+      {{ end }}
+    </footer>
+    {{ end }}
+  </body>
+</html>

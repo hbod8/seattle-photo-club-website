@@ -1,0 +1,29 @@
+<div class="lab-cards">
+  {{ range . }}
+  <section>
+    <h2>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+    <p>
+      {{ range .GetTerms "neighborhoods" }}
+      {{ .Title }}
+      {{ end }}
+    </p>
+    <div>
+      <h3>
+        {{ range .GetTerms "formats" }}
+        {{ partial "format-icon.html" .Title }}
+        {{ end }}
+      </h3>
+    </div>
+    <div>
+      <h3>
+        {{ range .GetTerms "processes" }}
+        {{ partial "process-icon.html" .Title }}
+        {{ end }}
+      </h3>
+    </div>
+    <p>{{ .Description }}</p>
+  </section>
+  {{ end }}
+</div>

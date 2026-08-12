@@ -1,0 +1,62 @@
+members:
+  - name: Harry Saliba
+    url: https://harrysaliba.com/
+    description: "A personal portfolio and technical blog."
+    feed:
+      url: https://harrysaliba.com/index.xml
+      type: rss
+  - name: Aimee
+    url: https://aimeeis.cool
+    description: "Blog like it’s 1999."
+    feed:
+      url: https://aimeeis.cool/feed/
+      type: rss
+  - name: Anders Conbere
+    url: https://anders.conbere.org/
+    description: "I am a film photographer and print maker and I can often be found in my basement lab developing film or mixing strange chemicals."
+    feed:
+      url: https://anders.conbere.org/blog/atom.xml
+      type: atom
+  - name: Elano
+    url: https://www.eellaannoo.com/
+    description: "In love with life."
+  - name: Lowleft
+    url: https://lowleft.photos
+    description: "Photography portfolio. Landscapes, infrared, analog, and motors."
+  - name: Mrinabh Dutta
+    url: https://www.mrinabh.com/
+    description: "Photographs from around the world by Mrinabh Dutta"
+  - name: Ariston
+    url: https://www.ariston.photo
+    description: "Capture the World with Me"
+  - name: Becca
+    url: https://rauchfirephoto.smugmug.com
+    description: "Becca Rauch is an adventurer based out of the Pacific Northwest - A place she calls home and has a certain spiritual connection to."
+  - name: Alain
+    url: https://aokframes.com/
+    description: "Alain is a photographer with a love for visual storytelling."
+  - name: kouji
+    url: https://flickr.com/photos/wutdowut/
+  - name: Jerry Ann
+    url: https://www.deddoarts.com/
+    description: "Jerry Ann is a Pacific Northwest based fine art photographer who has been practicing photography since she purchased her first 35mm film camera in 1991."
+  - name: Flying Camera Studio
+    url: https://www.flyingcamerastudio.com
+    description: "Everyday memories through extraordinary means"
+  - name: Douglass
+    url: https://itisdouglas.lol
+    description: "All of my art including photography will go here."
+  - name: Chris James White
+    url: https://www.chrisjameswhite.com/
+    description: "I'm a documentary photographer and global public health practitioner based in Seattle, USA, with more than two decades of experience working in the development and humanitarian aid sector across sub-Saharan Africa and Asia."
+  - name: Wade
+    url: https://www.cascadevisuals.com/
+    description: "Wade Greener Grant is a photographer living in Bellingham WA. His work utilizes both digital and analog mediums to capture scenes of the great outdoors and everyday life."
+  - name: Sajay
+    url: https://photography.sajay.com
+  - name: Forrest Bourke
+    url: https://forrestbourke.com/
+    description: "Hello, my name is Forrest Bourke and this is my website."
+  - name: Savannah
+    url: http://savannahjacobson.com
+    description: "I am a portrait, street, and documentary photographer in Seattle. My focus is working in social justice and economic empowerment. I collaborate with non-profits, street papers, and individuals. I am open to commissions."

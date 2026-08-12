@@ -1,0 +1,22 @@
+{{- $format := . -}}
+{{- if eq $format "135" -}}
+  {{- with resources.Get (path.Join "formats" "135.svg") -}}
+  <span class="format-icon"><img class="svg-icon" src="{{ .RelPermalink }}"><span class="format-icon-label">{{ $format }}</span></span>
+  {{- else -}}
+  <span class="format-icon"><span class="format-icon-label">{{ $format }}</span></span>
+  {{- end -}}
+{{- else if eq $format "120" -}}
+  {{- with resources.Get (path.Join "formats" "120.svg") -}}
+  <span class="format-icon"><img class="svg-icon" src="{{ .RelPermalink }}"><span class="format-icon-label">{{ $format }}</span></span>
+  {{- else -}}
+  <span class="format-icon"><span class="format-icon-label">{{ $format }}</span></span>
+  {{- end -}}
+{{- else if eq $format "110" -}}
+  {{- with resources.Get (path.Join "formats" "110.svg") -}}
+  <span class="format-icon"><img class="svg-icon" src="{{ .RelPermalink }}"><span class="format-icon-label">{{ $format }}</span></span>
+  {{- else -}}
+  <span class="format-icon"><span class="format-icon-label">{{ $format }}</span></span>
+  {{- end -}}
+{{- else -}}
+  <span class="format-icon"><span class="format-icon-label">{{ $format }}</span></span>
+{{- end -}}

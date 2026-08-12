@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main>
+  <h1>{{ .Title }}</h1>
+  {{ with .Site.Taxonomies.processes }}
+  <h3>
+    Labs by Process:
+    {{ range .ByCount }}
+    <a href="{{ .Page.RelPermalink }}">{{ partial "process-icon.html" .Page.Title }}</a>&nbsp;
+    {{ end }}
+  </h3>
+  {{ end }}
+  {{ with .Site.Taxonomies.formats }}
+  <h3>
+    Labs by Format:
+    {{ range .ByCount }}
+    <a href="{{ .Page.RelPermalink }}">{{ partial "format-icon.html" .Page.Title }}</a>&nbsp;
+    {{ end }}
+  </h3>
+  {{ end }}
+  {{ with .Site.Taxonomies.neighborhoods }}
+  <h3>
+    Labs by Neighborhood:
+    {{ range .ByCount }}
+    <a class="icon" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>&nbsp;
+    {{ end }}
+  </h3>
+  {{ end }}
+  {{ partial "lab-cards.html" .Pages }}
+</main>
+{{ end }}
