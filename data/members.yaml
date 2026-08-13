@@ -8,12 +8,14 @@ members:
   - name: Aimee
     url: https://aimeeis.cool
     description: "Blog like it’s 1999."
+    image: aimee.jpg
     feed:
       url: https://aimeeis.cool/feed/
       type: rss
   - name: Anders Conbere
     url: https://anders.conbere.org/
     description: "I am a film photographer and print maker and I can often be found in my basement lab developing film or mixing strange chemicals."
+    image: anders.jpg
     feed:
       url: https://anders.conbere.org/blog/atom.xml
       type: atom
@@ -35,6 +37,7 @@ members:
   - name: Alain
     url: https://aokframes.com/
     description: "Alain is a photographer with a love for visual storytelling."
+    image: aokframes.webp
   - name: kouji
     url: https://flickr.com/photos/wutdowut/
   - name: Jerry Ann

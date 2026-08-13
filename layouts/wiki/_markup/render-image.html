@@ -1,0 +1,12 @@
+{{ $img := or (.PageInner.Resources.GetMatch .Destination) (resources.Get .Destination) }}
+{{ with $img }}
+{{ $img = .Process "resize 600x jpeg q85" }}
+  <img src="{{ $img.RelPermalink }}"
+       alt="{{ $.Text }}"
+       {{ with $.Title }}title="{{ . }}"{{ end }}
+       loading="lazy" decoding="async">
+{{ else }}
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}"
+       {{ with .Title }}title="{{ . }}"{{ end }}
+       loading="lazy" decoding="async">
+{{ end }}
