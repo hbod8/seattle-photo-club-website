@@ -72,6 +72,16 @@ main img {
   width: 100%;
 }
 
+main>table {
+  max-width: 40rem;
+  border-collapse: collapse;
+}
+
+main>table td {
+  border: 1px solid gray;
+  padding: .2rem;
+}
+
 footer {
   grid-column: 1 / span 2;
   display: flex;
