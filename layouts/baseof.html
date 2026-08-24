@@ -14,8 +14,12 @@
     </title>
     <!-- CSS only -->
     {{ block "styles" . }}
-      <link rel="stylesheet" href="{{ "stylesheet.css" | relURL }}">
-    {{ with resources.Get "logo.png" }}
+      {{ with resources.Get "stylesheet.css" | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ else }}
+        {{ errorf "failed to load stylesheet.css" }}
+      {{ end }}
+    {{ with resources.Get "logo.png" | fingerprint }}
       {{ with .Process "resize 167x167 png" }}
         <link rel="apple-touch-icon" sizes="167x167"  href="{{ .RelPermalink }}" type="image/png">
       {{ end }}
@@ -64,11 +68,11 @@
         <small>&copy; {{ time.Format "2006" time.Now }} Seattle Photo Club and Harry Saliba</small>
         <small>icons by: <a href="https://thenounproject.com/creator/adauyek/">Assiya Dauyek</a></small>
         <div>
-          {{ with resources.Get "instagram.svg" }}
+          {{ with resources.Get "instagram.svg" | fingerprint}}
           {{ else }}
             {{ warnf "Missing instagram icon."}}
           {{ end }}
-          {{ with resources.Get "discord.svg" }}
+          {{ with resources.Get "discord.svg" | fingerprint}}
           {{ else }}
             {{ warnf "Missing discord icon."}}
           {{ end }}
