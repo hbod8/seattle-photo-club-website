@@ -87,3 +87,12 @@ members:
   - name: Quintin Doroquez
     url: https://www.instagram.com/the_q
     description: "Poly-camerous. Personal Work in Analog + Digital."
+  - name: Kota Callahan
+    url: https://www.instagram.com/kotacolor64
+    description: "local Contax nerd and Retrochrome enthusiast. nature, portraits, travel, and everyday. [X-T50, RTSII, P17, RB67, & VZ-6617]"
+    feed:
+      url: https://glass.photo/kotacolor/rss
+      type: rss
+  - name: Sonya Mariam
+    url: https://www.sonyamariamphotography.com
+    description: "Concert and live music photographer in Seattle WA."
