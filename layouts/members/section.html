@@ -1,11 +1,39 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  <ul class="member-list">
+  <div class="cards">
     {{ range .Pages.ByTitle }}
-    <li>
+    <section>
+      {{ $page := . }}
+      {{ with .Params.image }}
+        {{ with resources.Get (path.Join "members" .) }}
+          {{ with .Process "resize x480 jpg" }}
+            {{ with .Crop "480x480" }}
+            <a href="{{ $page.Params.Link }}">
+              <img class="member-image" src="{{ .RelPermalink }}" alt="{{ $page.Title }}">
+            </a>
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ errorf "Failed to get image while loading member %s" . }}
+        {{ end }}
+      {{ else }}
+        {{ with resources.Get "logo-round.png" }}
+          {{ with .Process "resize x480 jpg" }}
+            {{ with .Crop "480x480" }}
+            <a href="{{ $page.Params.Link }}">
+              <img class="member-image" src="{{ .RelPermalink }}" alt="{{ $page.Title }}">
+            </a>
+            {{ end }}
+          {{ end }}
+        {{ else }}
+          {{ errorf "Failed to get alt image while loading member %s" . }}
+        {{ end }}
+      {{ end }}
       <h3><a href="{{ .Params.link }}">{{ .Title }}</a></h3>
-      <p>{{ .Content }}</p>
-    </li>
+      {{ with .Content }}
+      <p>{{ . }}</p>
+      {{ end }}
+    </section>
     {{ end }}
-  </ul>
+  </div>
 {{ end }}

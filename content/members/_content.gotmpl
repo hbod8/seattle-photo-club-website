@@ -11,7 +11,8 @@
         "value" ($member.description | safeHTML))
       "kind" "page"
       "params" (dict
-        "link" $member.url)
+        "link" $member.url
+        "image" $member.image)
       "path" (anchorize $member.name)
       "title" $member.name
     }}

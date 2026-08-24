@@ -5,7 +5,7 @@
       {{ range . }}
         {{ $item := . }}
         {{ with resources.Get ( path.Join "featured" .file ) }}
-          {{ with .Process "resize x480 png" }}
+          {{ with .Process "resize x480 jpg" }}
             <div>
               <a href="{{ $item.link }}">
                 <img src="{{ .RelPermalink }}" alt="{{ $item.caption }}">
