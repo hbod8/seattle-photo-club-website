@@ -1,5 +1,5 @@
 <a href="{{ .Site.Home.RelPermalink }}">
-  {{ with resources.Get "logo.png" }}
+  {{ with resources.Get "logo.png" | fingerprint }}
   <img src="{{ .RelPermalink }}" alt="logo">
   {{ else }}
     {{ errorf "Failed to get toney logo \"logo.png\""}}
